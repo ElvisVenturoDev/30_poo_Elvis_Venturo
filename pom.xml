@@ -11,18 +11,30 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
+        <javafx.version>17.0.13</javafx.version>
     </properties>
 
     <dependencies>
+        <!-- JavaFX Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.13</version>
+            <version>${javafx.version}</version>
         </dependency>
+
+        <!-- JavaFX FXML (Descomenta si vas a usar archivos .fxml) -->
+        <!--
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        -->
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Plugin de compilación -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -31,6 +43,8 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+
+            <!-- Plugin de JavaFX para ejecutar la aplicación -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
